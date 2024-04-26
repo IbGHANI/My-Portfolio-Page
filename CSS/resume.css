@@ -1,0 +1,447 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --fontfamily: 'Poppins', sans;
+    --fontfamily2: sans-serif;
+    --fontsize: 1rem;
+    --fontsize2: 2rem;
+    --color: #fff;
+    --text-transform: capitalize;
+    --letter-spacing: 2px;
+    --font-weight: bolder;
+    --background-color: purple;
+    --transition: 0.5s;
+    --fontfamily2: 'Poppins', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+.header{
+    width: 100%;
+    padding: 1% 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    box-shadow: 1px 1px 1px var(--background-color);
+    position: fixed;
+    z-index: 100;
+}
+
+.header > .headings > h1{
+    color: white;
+    font-family: var(--fontfamily);
+    font-size: 2rem;
+    letter-spacing: var(--letter-spacing);
+    text-transform: var(--text-transform);
+}
+
+.header > .navbar > ul{
+    display: flex;
+    list-style: none;
+}
+
+.header > .navbar > ul > li > a{
+    padding: 5px;
+    margin-right: 23px;
+    font-size: 15px;
+    font-family: var(--fontfamily);
+    color: var(--color);
+    text-transform: var(--text-transform);
+    text-decoration: none;
+    position: relative;
+}
+
+.header > .navbar > ul > li > a::before{
+    content: '';
+    width: 50%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: var(--background-color);
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition:transform .5s linear;
+}
+
+.header > .navbar > ul > li > a:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.header > .navbar > ul li a.active:before{
+    content: '';
+    width: 50%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: var(--background-color);
+    position: absolute;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition:transform .5s linear;
+    color: var(--background-color);
+    font-family: sans-serif;
+}
+
+.header > .fa,
+.header > .navbar > .fa{
+    display: none;
+}
+
+/* the header ends here */
+
+
+/* the landing start here */
+
+
+.landing{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(19, 18, 18, 0.712), rgba(14, 13, 13, 0.614)), url(../IMAGES/background.jpg);
+}
+
+.landing > .about-container{
+    display: block;
+    width: 90%;
+    min-height: 90vh;
+    margin-top: 10%;
+    background-color: black;
+    padding: 2%;
+    margin-bottom: 3%;
+}
+
+.landing > .about-container > .headings{
+    margin-bottom: 2%;
+}
+
+.landing > .about-container > .headings > h3{
+    width: 20%;
+    color: var(--color);
+    font-family: var(--fontfamily);
+    font-size: var(--fontsize);
+    text-transform: var(--text-transform);
+    letter-spacing: var(--letter-spacing);
+    margin-bottom: 1%;
+} 
+
+h3 > .line{
+    display: inline-block;
+    margin-left: 2%;
+    width: 30%;
+    height: 3px;
+    background: var(--background-color);
+}
+
+
+.landing > .about-container > .headings > h1{
+    font-family: var(--fontfamily);
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    color: var(--color);
+}
+
+.content-container{
+    width: 100%;
+    height: 250vh;
+    background-color: transparent;
+    display: flex;
+}
+
+.content-container > .content1,
+.content-container > .content2
+{
+    width: 50%;
+    height: 100vh;
+    background-color: var(--transition);
+}
+
+.content-container > .content1 > .sum,
+.content-container > .content2 > .sum
+{
+    width: 100%;
+    background-color: transparent;
+}
+
+.content-container > .content1 > .sum > h3,
+.content-container > .content2 > .sum > h3
+{
+    font-family: var(--fontfamily);
+    font-size: 1.5rem;
+    color: var(--color);
+    text-transform: var(--text-transform);
+    margin-bottom: 2%;
+}
+
+.content-container > .content1 > .sum > .details,
+.content-container > .content2 > .sum > .details
+{
+    width: 95%;
+    background-color: transparent;
+    /* padding-left: 3%; */
+    padding: 0 0 20px 20px;
+    position: relative;
+    border-left: 2px solid var(--background-color);
+
+}
+
+.content-container > .content1 > .sum > .details > h3, 
+.content-container > .content2 > .sum > .details > h3
+{
+    font-family: var(--fontfamily);
+    font-size: 1.2rem;
+    color: var(--background-color);
+    text-transform: var(--text-transform);
+    margin-bottom: 2%;
+}
+
+.content-container > .content1 > .sum > .details::before,
+.content-container > .content2 > .sum > .details::before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    left: -9px;
+    top: 0;
+    background-color: var(--background-color);
+    border: 2px solid var(--background-color);
+    position: absolute;
+}
+
+.content-container > .content1 > .sum > .details > h4,
+.content-container > .content2 > .sum > .details > h4
+{
+    line-height: 18px;
+    font-family: var(--fontfamily);
+    font-size: 1.2rem;
+    color: var(--background-color);
+    text-transform: var(--text-transform);
+    margin-bottom: 3%;
+}
+
+.content-container > .content1 > .sum > .details > p,
+.content-container > .content2 > .sum > .details > p
+{
+    color: var(--color);
+    font-family: var(--fontfamily);
+    font-size: 15px;
+    font-style: italic;
+
+}
+
+.content-container > .content1 > .sum > .details > h2,
+.content-container > .content2 > .sum > .details > h2
+{
+    width: 40%;
+    padding: 7px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--color);
+    font-size: 14px;
+    margin-bottom: 2%;
+    
+}
+
+.content-container > .content1 > .sum > .details > ul,
+.content-container > .content2 > .sum > .details > ul
+{
+    display: block;
+    color: var(--color);
+    margin-top: 4%;
+    margin-left: 3%;
+    font-size: 1.2rem;
+}
+
+.content-container > .content1 > .sum > .details > ul li,
+.content-container > .content2 > .sum > .details > ul li
+{
+    font-family: sans-serif;
+    line-height: 2rem;
+    font-size: 15px;
+    color: var(--color);
+}
+.content-container > .content2 > .sum > .details > ul li > a{
+    color: var(--background-color);
+}
+
+.content-container > .content1 > .sum > .details > ul > li > span{
+    color: var(--background-color);
+}
+
+.content-container > .content1 > .sum > .details > h4,
+.content-container > .content2 > .sum > .details > h4
+{
+
+    font-family: var(--fontfamily);
+    font-size: 25px;
+}
+
+.footer{
+
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 15px;
+    text-align: right;
+    font-size: 13px;
+    color: #fff;
+    z-index: 999999;
+}
+
+.footer > p{
+    font-family: var(--fontfamily);
+    font-size: var(--fontsize);
+    color: var(--color);
+    text-transform: var(--text-transform);
+    text-align: right;
+}
+
+.footer > p > span{
+    color: var(--background-color);
+    font-weight: var(--font-weight);
+    margin-right: 5px;
+}
+
+/* the landing ends here */
+
+
+/* the media query start here */
+
+@media only screen and (max-width: 768px){
+
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 2% 3%;
+         /* Make the header fixed */
+        background: black;
+        position: fixed;
+        z-index: 100;
+    }
+
+    .header > .headings > h1{
+        font-size: 19px;
+    }
+    .header > .fa{
+        display: block;
+        color: var(--color);
+        font-size: 1.3rem;
+        margin: 5px 5px;
+    }
+    .header > .navbar > .fa{
+        display: block;
+        color: var(--color);
+        font-size: 1.5rem;
+        float: right;
+        margin: 10px 20px;
+    }
+
+    .header > .navbar{
+        overflow: hidden;
+        background-color: black;
+        position: fixed; /* or "absolute" depending on your layout */
+        top: 0;
+        left: -300px; /* initially hide the menu off-screen */
+        transition: left 0.3s ease; /* smooth transition when showing/hiding */
+        z-index: 1000; /* ensure it's above other content */
+        width: 250px; /* adjust according to your design */
+        height: 100%;
+    }
+
+    .header > .headings{
+        width: 50%;
+    }
+
+    .header > .navbar > ul{
+        display: block;
+        margin-top: 22%;
+        padding: 1% 5%;
+    }
+
+    .header > .navbar > ul > li{
+        margin-top: 10%;
+    }
+
+    .landing{
+        width: 100%;
+        padding: 1% 2%;
+        height: 410vh;
+    }
+
+    .landing > .about-container{
+        width: 100%;
+        margin-top: 20%;
+        height: 395vh;
+    }
+
+    .landing > .about-container > .headings > h3{
+        font-size: 15px;
+        width: 100%;
+    }
+    .landing > .about-container > .headings > h1{
+        font-size: 20px;
+        margin-bottom: 5%;
+    }
+
+    .landing > .about-container > .content-container{
+        display: block;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .landing > .about-container > .content-container > .content1 > .sum > h3{
+        font-size: 15px;
+    }
+
+    .landing > .about-container > .content-container > .content1{
+        width: 100%;
+    }
+    .landing > .about-container > .content-container > .content2
+    {
+        width: 100%;
+        margin-top: 245%;
+    }
+
+    .content-container > .content1 > .sum > .details > h4,
+    .content-container > .content2 > .sum > .details > h4
+    {
+        width: 100%;
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .content-container > .content1 > .sum > .details > h2,
+    .content-container > .content2 > .sum > .details > h2
+    {
+        width: 60%;
+        padding: 10px;
+        font-size: 12px;
+    }
+    .content-container > .content1 > .sum > .details > p{
+        font-size: 15px;
+    }
+
+    .content-container > .content1 > .sum > .details > ul > li,
+    .content-container > .content2 > .sum > .details > ul > li
+    {
+        font-size: 15px;
+    }
+
+    .footer > p{
+        text-align: center;
+    }
+
+}

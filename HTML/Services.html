@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="../CSS/services.css">
+    <link rel="stylesheet" href="../CSS/responsiveness.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,600;1,100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+
+  <section class="header">
+    <div class="headings">
+        <h1>ibrahim-Saad</h1>
+    </div>
+
+    <div class="navbar" id="navLinks">
+        <i class="fa fa-times" aria-hidden="true" onclick="hideMenu()"></i>
+        <ul id="yourTarget">
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="resume.html">resume</a></li>
+            <li><a href="Services.html">service</a></li>
+            <li><a href="portfolio.html">portfolio</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </div>
+    <i class="fa fa-align-justify" aria-hidden="true" onclick="showMenu()"></i>
+</section>
+
+ <!-- 
+  the landing start here
+  -->
+
+  <section class="landing">
+    <div class="container">
+
+      <div class="headings">
+        <h3>about <span class="line"></span></h3>
+        <h1>my services</h1>
+      </div>
+
+      <div class="container2">
+
+        <div class="row">
+          <div class="content">
+            <div class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
+            <h4>Web Development</h4>
+            <p>Use of latest technologies to build interactive and mobile-responsive websites and web applications.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="content">
+            <div class="icon"><i class="fa fa-life-ring" aria-hidden="true"></i>
+            </div>
+            <h4>Website Maintenance</h4>
+            <p>Maintenance of various databases of website and web applications. Thereby providing security of website data..</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="content">
+            <div class="icon"><i class="fa fa-server" aria-hidden="true"></i> </div>
+            <h4>Search Engine Optimization</h4>
+            <p>Improving the visibilty of sites when searched on search engines, thereby attracting prospective and existing customers..</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </section>
+
+<!-- 
+    the landing end here
+   -->
+   
+  <!-- 
+    The footer start here
+   -->
+
+   <div class="footer">
+    <p>designed by <span>ibrahim-Saad</span></p>
+</div>
+  
+
+   <!-- 
+    the footer ends here
+    -->
+
+
+ 
+
+    
+
+    <script>
+
+      const currentLocation = location.href;
+      const menuItem = document.querySelectorAll(".navbar ul a");
+      const menuLength = menuItem.length;
+      
+      for(var i = 0; i < menuLength; i++) {
+          if(menuItem[i].href === currentLocation){
+              menuItem[i].className = "active";
+          }
+      }
+      
+      
+      function animateProgressBar(barId, percentage) {
+          var bar = document.getElementById(barId);
+          var width = 0;
+          var id = setInterval(frame, 10);
+          function frame() {
+              if (width >= percentage) {
+                  clearInterval(id);
+              } else {
+                  width++;
+                  bar.style.width = width + "%";
+                  bar.innerHTML = width + "%";
+              }
+          }
+      }
+      
+      animateProgressBar("htmlBar", 99);
+      animateProgressBar("cssBar", 95);
+      animateProgressBar("jsBar", 75);
+      animateProgressBar("phpBar", 80);
+      animateProgressBar("mysqlBar", 75);
+      
+      
+      
+      // scrollReveal on about
+      
+      ScrollReveal().reveal('.headings', {
+          duration: 700,
+          delay: 200,
+          easing: 'ease-in-out',
+          origin: 'top',
+          distance: '50px',
+          opacity: 0,
+          scale: 0.8
+      });
+      
+      // navbar scrollreveal
+      
+      ScrollReveal().reveal('.navbar', {
+          duration: 800,
+          delay: 250,
+          easing: 'ease-in-out',
+          origin: 'left',
+          distance: '50px',
+          opacity: 0,
+          scale: 0.8
+      });
+      
+      // skill scrollreveal
+      
+      ScrollReveal().reveal('.details', {
+          duration: 800,
+          delay: 500,
+          easing: 'ease-in-out',
+          origin: 'top',
+          distance: '40px',
+          opacity: 0,
+          scale: 0.8
+      });
+      
+      
+      
+      // show menu section for media query
+      var navLinks = document.getElementById("navLinks");
+      
+      function showMenu() {
+          navLinks.style.left = "0";
+          navLinks.classList.add("active"); // Add the "active" class to handle the display
+      }
+      
+      function hideMenu() {
+          navLinks.style.left = "-300px";
+          navLinks.classList.remove("active"); // Remove the "active" class
+      }
+      
+      var targetElement = document.getElementById("yourTarget");
+              if (targetElement) {
+                  targetElement.addEventListener("click", hideMenu);
+              }
+      
+      
+      </script>
+    <!-- <script src="../JS/jsfile.js"></script> -->
+</body>
+</html>
