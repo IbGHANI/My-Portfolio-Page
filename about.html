@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="../CSS/responsiveness.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,600;1,100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+</head>
+<body>
+
+    <!-- 
+        the header start here
+     -->
+    
+    <section class="header">
+            <div class="headings">
+                <h1>ibrahim-Saad</h1>
+            </div>
+            <div class="navbar" id="navLinks">
+                <i class="fa fa-times" aria-hidden="true" onclick="hideMenu()"></i>
+                <ul id="yourTarget">
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="resume.html">resume</a></li>
+                    <li><a href="Services.html">service</a></li>
+                    <li><a href="portfolio.html">portfolio</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-align-justify" aria-hidden="true" onclick="showMenu()"></i>
+     </section>
+
+     <!-- 
+        the header ends here
+      -->
+
+
+      <!-- 
+        the landing start here
+       -->
+       <section class="landing">
+        <div class="about-container">
+            <div class="headings">
+                <h3>about <span class="line"></span></h3>
+                <h1>learn more about me</h1>
+            </div>
+
+            <div class="content">
+                <div class="content2">
+                    <div class="content3">
+                        <div class="image">
+                            <img src="../IMAGES/mypics.jpg" alt="">
+                        </div>
+
+                        <div class="content4">
+                            <h1>who is ibrahim-Saad?</h1>
+                            <p>I am passionate about building successful web applications and softwares for businesses, brands and organizations. Bringing their ideas into reality using codes. 
+                                I am open to senior level roles as a software developer using any of the technologies stated in the skills sections.</p>
+
+                        <div class="contact">
+                            <ul>
+                                <li><i class="fa fa-phone" aria-hidden="true"></i> <strong>phone:</strong> +234 8169278095</li>
+                                <li><i class="fa fa-envelope" aria-hidden="true"></i><strong>email:</strong> saadallahibrahhim11@gmail.com</li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills">
+                <div class="headings">
+                    <h3>skills <span class="line"></span></h3>
+                </div>
+
+                <div class="the-skills">
+                    <div class="progress">
+                        <div class="skill">
+                            <div class="skill-name">HTML</div>
+                            <div class="progress-bar" id="htmlBar"></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">CSS</div>
+                            <div class="progress-bar" id="cssBar"></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">JavaScript</div>
+                            <div class="progress-bar" id="jsBar"></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">PHP</div>
+                            <div class="progress-bar" id="phpBar"></div>
+                        </div>
+                        
+                        <div class="skill">
+                            <div class="skill-name">MySQL</div>
+                            <div class="progress-bar" id="mysqlBar"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+
+</section>
+
+<div class="footer">
+    <p>designed by <span>ibrahim-Saad</span></p>
+</div>
+
+
+
+       <!-- 
+        the landing ends
+        -->
+
+
+<script>
+
+const currentLocation = location.href;
+const menuItem = document.querySelectorAll(".navbar ul a");
+const menuLength = menuItem.length;
+
+for(var i = 0; i < menuLength; i++) {
+    if(menuItem[i].href === currentLocation){
+        menuItem[i].className = "active";
+    }
+}
+
+
+function animateProgressBar(barId, percentage) {
+    var bar = document.getElementById(barId);
+    var width = 0;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= percentage) {
+            clearInterval(id);
+        } else {
+            width++;
+            bar.style.width = width + "%";
+            bar.innerHTML = width + "%";
+        }
+    }
+}
+
+animateProgressBar("htmlBar", 99);
+animateProgressBar("cssBar", 95);
+animateProgressBar("jsBar", 75);
+animateProgressBar("phpBar", 80);
+animateProgressBar("mysqlBar", 75);
+
+
+
+// scrollReveal on about
+
+ScrollReveal().reveal('.headings', {
+    duration: 700,
+    delay: 200,
+    easing: 'ease-in-out',
+    origin: 'top',
+    distance: '50px',
+    opacity: 0,
+    scale: 0.8
+});
+
+
+ScrollReveal().reveal('.image', {
+    delay: 500,
+    origin: 'top',
+    distance: '50px',
+    duration: 1000,
+    easing: 'ease-in-out',
+    opacity: 0,
+    scale: 0.8
+});
+
+ScrollReveal().reveal('.content4', {
+    delay: 300,
+    origin: 'top',
+    distance: '50px',
+    duration: 1000,
+    easing: 'ease-in-out',
+    opacity: 0,
+    scale: 0.8
+});
+
+
+
+
+// skill scrollreveal
+
+ScrollReveal().reveal('.skill', {
+    duration: 800,
+    delay: 300,
+    easing: 'ease-in-out',
+    origin: 'top',
+    distance: '40px',
+    opacity: 0,
+    scale: 0.8
+});
+
+// Initialize ScrollReveal
+
+
+// show menu section for media query
+var navLinks = document.getElementById("navLinks");
+
+function showMenu() {
+    navLinks.style.left = "0";
+    navLinks.classList.add("active"); // Add the "active" class to handle the display
+}
+
+function hideMenu() {
+    navLinks.style.left = "-300px";
+    navLinks.classList.remove("active"); // Remove the "active" class
+}
+
+var targetElement = document.getElementById("yourTarget");
+        if (targetElement) {
+            targetElement.addEventListener("click", hideMenu);
+        }
+
+
+</script>
+        
+<!-- 
+<script src="../JS/jsfile.js"></script>
+<script src="../JS/mobile.js"></script> -->
+    
+</body>
+</html>
