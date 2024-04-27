@@ -271,12 +271,12 @@ h3 > .line{
     font-size: 15px;
     color: var(--color);
 }
+
 .content-container > .content2 > .sum > .details > ul li > a{
     color: var(--background-color);
 }
-
 .content-container > .content1 > .sum > .details > ul > li > span{
-    color: var(--background-color);
+    color: var(--color);
 }
 
 .content-container > .content1 > .sum > .details > h4,

@@ -206,12 +206,16 @@ h3 > .line{
     margin-bottom: 5%;
     text-transform: var(--text-transform);
 }
-.contact > ul > li>.fa{
+.contact > ul > li > .fa{
     color: var(--background-color);
     margin-right: 2%;
 }
 .contact > ul > li > strong{
     color: var(--background-color);
+}
+
+.contact > ul > li > span{
+    color: var(--color);
 }
 .about-container > .skills{
     width: 100%;
