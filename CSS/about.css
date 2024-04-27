@@ -214,8 +214,9 @@ h3 > .line{
     color: var(--background-color);
 }
 
-.contact > ul > li > span{
+.contact > ul > li > a{
     color: var(--color);
+    text-decoration: none;
 }
 .about-container > .skills{
     width: 100%;

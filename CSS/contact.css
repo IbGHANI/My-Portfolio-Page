@@ -201,6 +201,10 @@ h3 > .line{
     color: var(--background-color);
 }
 
+.landing > .container > .container2 > .content > .details > p > span > a{
+    text-decoration: none;
+    color: var(--color);
+} 
 .landing > .container > .container2 > .content > .details > .icon{
     display: flex;
     width: 40%;

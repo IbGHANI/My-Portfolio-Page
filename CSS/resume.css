@@ -274,9 +274,11 @@ h3 > .line{
 
 .content-container > .content2 > .sum > .details > ul li > a{
     color: var(--background-color);
+    text-decoration: none;
 }
-.content-container > .content1 > .sum > .details > ul > li > span{
+.content-container > .content1 > .sum > .details > ul > li > span > a {
     color: var(--color);
+    text-decoration: none;
 }
 
 .content-container > .content1 > .sum > .details > h4,
